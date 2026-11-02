@@ -2,9 +2,11 @@
 
 A [Typst](https://typst.app) template for dissertations, theses and books,
 based on the [kaobook](https://github.com/fmarotta/kaobook) LaTeX class by
-Federico Marotta.
+Federico Marotta, which in turn grew out of the doctoral thesis of Ken Arroyo
+Ohori and the Tufte-LaTeX classes. kaodiss reimplements kaobook's design in
+Typst, without code from kaobook (see [Acknowledgements](#acknowledgements)).
 
-![Chapter page of the example document](https://raw.githubusercontent.com/BWeigell/kaodiss/main/thumbnail.png)
+![Chapter page of the example document](thumbnail.png)
 
 ## Features
 
@@ -356,19 +358,3 @@ See `LICENSE` for the details.
   License 1.1).
 - Dependency (downloaded by Typst, not included):
   [marginalia](https://typst.app/universe/package/marginalia), Unlicense.
-
-## Kurzanleitung (Deutsch)
-
-1. Schriften installieren (siehe [Fonts](#fonts); auf dem Mac
-   `brew install --cask font-tex-gyre-pagella font-tex-gyre-pagella-math font-tex-gyre-heros`).
-2. Repository klonen oder herunterladen und `sh kaodiss/scripts/install-local.sh`
-   ausführen (kopiert die Vorlage als `@local/kaodiss:0.1.0`; unter Windows den
-   Ordner nach `%APPDATA%\typst\packages\local\kaodiss\0.1.0` kopieren).
-3. `typst init @local/kaodiss:0.1.0 meine-arbeit` legt ein Beispieldokument an,
-   das alle Elemente zeigt; `typst compile main.typ` erzeugt das PDF. Beim
-   ersten Mal braucht Typst Internet, um das Paket `marginalia` zu laden.
-4. `lang: "de"` stellt alle festen Begriffe auf Deutsch um
-   (Inhaltsverzeichnis, Abbildung, Literaturverzeichnis, „zitiert auf Seite“ …).
-5. Farben: `colors: (primary: ..., link: ..., challenge: ..., objective: ...,
-   definition: ...)` oder eine fertige Palette (`"ocean"`, `"forest"`, `"berry"`),
-   Box-Aussehen mit `box-style: "tinted" | "bar" | "banner"`.
