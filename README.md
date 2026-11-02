@@ -1,33 +1,40 @@
 # kaodiss
 
-A [Typst](https://typst.app) template for dissertations, theses and books in
-the style of the [kaobook](https://github.com/fmarotta/kaobook) LaTeX class: a
-wide outer margin for sidenotes, figure captions and a small table of contents
-on every chapter page.
+A [Typst](https://typst.app) template for dissertations, theses and books,
+based on the [kaobook](https://github.com/fmarotta/kaobook) LaTeX class by
+Federico Marotta.
 
 ![Chapter page of the example document](https://raw.githubusercontent.com/BWeigell/kaodiss/main/thumbnail.png)
 
-Page geometry, type sizes and spacing follow kaobook (A4) and were checked
-against a document typeset with kaobook: on the same text, kaodiss produces the
-same number of lines per paragraph and the same baselines to within a fraction
-of a point.
+## Features
 
-**Features**
+**📐 The margin does the work.** Sidenotes instead of footnotes, margin notes
+and margin figures, captions beside the figure, and a small table of contents
+on every chapter page. Wide figures and tables span text and margin.
 
-- 1.5-column layout with sidenotes, margin notes, margin figures and captions
-  in the margin; wide figures and tables across text and margin
-- chapter pages with a large number, a vertical rule and a margin table of
-  contents; parts; running heads
-- title page and its back side (supervisors, date of defence, copyright)
-- abstract (also in a second language), acknowledgements, table of contents,
-  lists of figures, tables, listings and algorithms, appendix, declaration
-- citations with Typst's `@key` syntax in three styles, with back references
-  ("cited on pages 3, 17") in the bibliography
-- abbreviations and glossary with first-use expansion and page lists
-- boxes for challenges, objectives, definitions, theorems and examples
-- five accent colours and three box styles
-- English and German
-- a VS Code setup for writing (font, layout, spell and grammar check)
+**🎓 Everything a thesis needs.** Title page with supervisors and date of
+defence on its back, abstracts in two languages, acknowledgements, lists of
+figures, tables, listings and algorithms, appendix and statutory declaration.
+All of it is optional: leave it out, and you have a book.
+
+**📚 Citations that point back.** Typst's `@key` syntax in three styles
+(author–year after biblatex-nature, DIN alphanumeric, IEEE), and every
+bibliography entry shows the pages on which it is cited.
+
+**🔤 Abbreviations without bookkeeping.** `@api` is written out the first time
+and short afterwards; the list at the end contains only the abbreviations you
+used, with their pages. A glossary works the same way.
+
+**🎨 Your colours.** Black and grey like kaobook by default, or five accent
+colours of your choice, three ready-made palettes and three box styles for
+challenges, objectives, definitions and theorems.
+
+**🌍 English and German**, with the matching hyphenation, quotation marks and
+terms, and a second language for the second abstract.
+
+**✍️ Calm writing in VS Code.** A writing font, a centred text column, a word
+count and local spelling and grammar checks, without code clutter or AI
+suggestions while you type.
 
 ## Quick start
 
