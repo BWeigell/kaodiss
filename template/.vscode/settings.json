@@ -1,0 +1,59 @@
+{
+  // The TeX Gyre fonts must be installed (see README.md), or set tinymist.fontPaths
+  // Tinymist
+  "tinymist.exportPdf": "onSave",
+  "tinymist.outputPath": "$root/$dir/$name",
+  "tinymist.formatterMode": "typstyle",
+  "tinymist.statusBarFormat": "{compileStatusIcon} {wordCount} · {charCount} [{fileName}]",
+  // Writing: Zen mode (Cmd/Ctrl+K Z) centres the text column
+  "zenMode.centerLayout": true,
+  "zenMode.hideLineNumbers": true,
+  "zenMode.fullScreen": false,
+  "workbench.editor.centeredLayoutFixedWidth": true,
+  // Spelling and grammar: LTeX+ (LanguageTool). The language of a single file can be changed with a first line `// LTeX: language=de-DE`.
+  "ltex.language": "en-US",
+  // Your native language enables warnings about false friends, e.g. "de-DE":
+  // "ltex.additionalRules.motherTongue": "de-DE",
+  "ltex.checkFrequency": "edit",
+  "cSpell.enabledFileTypes": {
+    "typst": false
+  },
+  // No AI completions while writing prose (Copilot defaults kept for other languages)
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "typst": false
+  },
+  "[typst]": {
+    "editor.inlineSuggest.enabled": false,
+    "editor.fontFamily": "'iA Writer Quattro S', 'iA Writer Quattro V', Menlo, monospace",
+    "editor.fontSize": 15,
+    "editor.lineHeight": 1.7,
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 80,
+    "editor.wrappingIndent": "same",
+    "editor.wrappingStrategy": "advanced",
+    "editor.padding.top": 24,
+    "editor.minimap.enabled": false,
+    "editor.lineNumbers": "off",
+    "editor.glyphMargin": false,
+    "editor.showFoldingControls": "mouseover",
+    "editor.renderLineHighlight": "none",
+    "editor.guides.indentation": false,
+    "editor.rulers": [],
+    "editor.occurrencesHighlight": "off",
+    "editor.selectionHighlight": false,
+    "editor.wordBasedSuggestions": "off",
+    "editor.quickSuggestions": {
+      "other": "off",
+      "comments": "off",
+      "strings": "off"
+    },
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.smoothScrolling": true,
+    "editor.formatOnSave": false
+  }
+}

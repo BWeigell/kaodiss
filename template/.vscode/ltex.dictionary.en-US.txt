@@ -1,0 +1,12 @@
+Typst
+kaobook
+kaodiss
+sidenote
+sidenotes
+booktabs
+Pygments
+Pagella
+Heros
+biblatex
+glossaries
+minted

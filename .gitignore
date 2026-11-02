@@ -1,0 +1,5 @@
+# build output (the example is built with `typst compile`)
+template/main.pdf
+*.pdf
+!template/figures/*.pdf
+.DS_Store
