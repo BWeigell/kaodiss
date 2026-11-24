@@ -25,6 +25,18 @@
 
 #let m = metrics
 
+// Plain text of a title for the PDF metadata: line breaks become single spaces.
+#let plain-text(it) = {
+  if it == none { return "" }
+  if type(it) == str { return it }
+  if it.has("text") { return it.text }
+  if it.has("children") { return (it.children.map(plain-text) + ("",)).join() }
+  if it.has("body") { return plain-text(it.body) }
+  if it.func() == smartquote { return if it.double { "\"" } else { "'" } }
+  if it.func() in (linebreak, [ ].func()) { return " " }
+  ""
+}
+
 // Chapter motto, centred and in italics:
 // `#epigraph(attribution: [Alan Turing @turing1950])["We can only see ..."]`
 #let epigraph(body, attribution: none) = block(
@@ -128,7 +140,7 @@
   theme-state.update(theme)
 
   set document(
-    title: title,
+    title: if title == none { none } else { plain-text(title).replace(regex("\s+"), " ").trim() },
     author: author,
     keywords: keywords,
     date: if type(date) == datetime { date } else { auto },

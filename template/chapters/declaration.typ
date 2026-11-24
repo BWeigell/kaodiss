@@ -1,4 +1,4 @@
-#import "@local/kaodiss:0.1.0": signature
+#import "@preview/kaodiss:0.1.0": signature
 
 // Replace this text with the wording required by your doctoral regulations.
 I hereby declare that I have written this dissertation independently and that

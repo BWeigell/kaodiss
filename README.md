@@ -6,7 +6,10 @@ Federico Marotta, which in turn grew out of the doctoral thesis of Ken Arroyo
 Ohori and the Tufte-LaTeX classes. kaodiss reimplements kaobook's design in
 Typst, without code from kaobook (see [Acknowledgements](#acknowledgements)).
 
-![Chapter page of the example document](thumbnail.png)
+[![Chapter page of the example document](https://raw.githubusercontent.com/BWeigell/kaodiss/main/thumbnail.png)](https://github.com/BWeigell/kaodiss/releases/latest/download/kaodiss-example.pdf)
+
+📄 **[Example document (PDF, 35 pages)](https://github.com/BWeigell/kaodiss/releases/latest/download/kaodiss-example.pdf)**: the document that
+`typst init` creates, showing every element of the template.
 
 ## Features
 
@@ -45,32 +48,34 @@ suggestions while you type.
 2. Install Typst 0.15 or newer (`brew install typst`, `winget install Typst.Typst`,
    or see [typst.app](https://github.com/typst/typst#installation)) and, for VS
    Code, the Tinymist extension.
-3. Clone or download this repository and install it as the local package
-   `@local/kaodiss:0.1.0`:
-
-   - macOS / Linux:
-
-     ```sh
-     sh kaodiss/scripts/install-local.sh
-     ```
-
-   - Windows: copy the folder `kaodiss` to
-     `%APPDATA%\typst\packages\local\kaodiss\0.1.0`
-     (so that `typst.toml` ends up directly in `0.1.0`).
-
-   The downloaded folder can be deleted afterwards. (`--link` creates a symlink
-   instead of a copy, for working on the template itself.)
-
-4. Start a new document from the template and compile it:
+3. Start a new document from the template and compile it:
 
    ```sh
-   typst init @local/kaodiss:0.1.0 my-thesis
+   typst init @preview/kaodiss:0.1.0 my-thesis
    cd my-thesis
    typst compile main.typ
    ```
 
-   The first compilation needs internet access, because Typst downloads the
-   package `marginalia` from Typst Universe once.
+In the [Typst web app](https://typst.app), choose "Start from template" and
+search for kaodiss. If the TeX Gyre fonts are not available there, upload the
+`.otf` files to the project.
+
+### Installing from source
+
+To use a version that is not (yet) on Typst Universe, clone or download the
+[repository](https://github.com/BWeigell/kaodiss) and install it as the local
+package `@local/kaodiss:0.1.0`:
+
+```sh
+sh kaodiss/scripts/install-local.sh
+typst init @local/kaodiss:0.1.0 my-thesis
+```
+
+On Windows, copy the folder to
+`%APPDATA%\typst\packages\local\kaodiss\0.1.0` (so that `typst.toml` ends up
+directly in `0.1.0`) and replace `@preview/kaodiss` by `@local/kaodiss` in the
+imports of the new document. `install-local.sh --link` instead links the folder
+as `@preview/kaodiss:0.1.0`, for working on the template itself.
 
 ### Fonts
 
@@ -98,7 +103,7 @@ or Libertinus and the layout changes.
 ## Usage
 
 ```typ
-#import "@local/kaodiss:0.1.0": *
+#import "@preview/kaodiss:0.1.0": *
 
 #show: kaodiss.with(
   lang: "en",                      // or "de"
@@ -111,7 +116,7 @@ or Libertinus and the layout changes.
   chair: "Research Group on Example Systems",
   place: "Example City",
   date: datetime(year: 2026, month: 10, day: 1),
-  logos: (image("figures/logo.pdf", height: 40mm),),
+  // logos: (image("figures/logo.pdf", height: 40mm),),
   supervisors: ([Prof. A \ Department \ University],),
   advisors: ([Prof. B \ Department \ University],),
   abstract: include "chapters/abstract.typ",

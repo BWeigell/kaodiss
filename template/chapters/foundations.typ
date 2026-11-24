@@ -1,4 +1,4 @@
-#import "@local/kaodiss:0.1.0": *
+#import "@preview/kaodiss:0.1.0": *
 
 = Figures, Tables and Mathematics <ch:foundations>
 

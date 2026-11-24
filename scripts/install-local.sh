@@ -1,9 +1,12 @@
 #!/usr/bin/env sh
-# Installs this folder as the local Typst package @local/kaodiss:<version>.
+# Installs this folder as a local Typst package, without Typst Universe.
 #
-#   scripts/install-local.sh          copy the files (recommended for users)
-#   scripts/install-local.sh --link   symlink instead, so that changes to the
-#                                     template take effect immediately (development)
+#   scripts/install-local.sh          copy the files to @local/kaodiss:<version>
+#                                     and make the template import @local
+#                                     (for users of a downloaded copy)
+#   scripts/install-local.sh --link   symlink this folder as @preview/kaodiss:<version>,
+#                                     so that the template (which imports @preview)
+#                                     uses the working copy (development)
 #
 # The target directory follows Typst's conventions; TYPST_PACKAGE_PATH
 # overrides it (as it does for typst itself).
@@ -24,7 +27,8 @@ else
   esac
 fi
 
-target="$packages/local/kaodiss/$version"
+if [ "$mode" = link ]; then namespace=preview; else namespace=local; fi
+target="$packages/$namespace/kaodiss/$version"
 mkdir -p "$(dirname "$target")"
 rm -rf "$target"
 if [ "$mode" = link ]; then
@@ -36,9 +40,13 @@ else
     mkdir -p "$target/$(dirname "$f")"
     cp "$here/$f" "$target/$f"
   done
+  # documents created with `typst init @local/kaodiss:...` import the local copy
+  find "$target/template" -name '*.typ' | while read -r f; do
+    sed "s|@preview/kaodiss:|@local/kaodiss:|g" "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+  done
 fi
 
-echo "Installed @local/kaodiss:$version ($mode) -> $target"
+echo "Installed @$namespace/kaodiss:$version ($mode) -> $target"
 if [ -d "$here/fonts" ]; then
   echo "Fonts are included in $target/fonts: install them, or pass --font-path."
 else

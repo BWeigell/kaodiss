@@ -2,7 +2,7 @@
 // degree-type and degree to none and leave out supervisors, abstract etc.
 // Compile with:  typst compile main.typ
 // (requires the fonts TeX Gyre Pagella, Pagella Math and Heros, see README)
-#import "@local/kaodiss:0.1.0": *
+#import "@preview/kaodiss:0.1.0": *
 
 #show: kaodiss.with(
   lang: "en",

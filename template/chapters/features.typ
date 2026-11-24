@@ -1,4 +1,4 @@
-#import "@local/kaodiss:0.1.0": *
+#import "@preview/kaodiss:0.1.0": *
 
 = Code and Other Elements <ch:features>
 
