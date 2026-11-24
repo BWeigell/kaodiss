@@ -259,10 +259,10 @@ The template ships a `.vscode` folder (copied by `typst init`) that turns VS
 Code into a calmer writing environment for `.typ` files; other file types keep
 your normal settings.
 
-- Editor font iA Writer Quattro (install it once:
-  `brew install --cask font-ia-writer-quattro`, or from
-  [iA-Fonts](https://github.com/iaolo/iA-Fonts); without it VS Code uses its
-  normal font), larger line height, soft wrap at 80 characters, no minimap, line
+- Editor font [IBM Plex Mono](https://github.com/IBM/plex) (install it once:
+  `brew install --cask font-ibm-plex-mono`, `sudo apt install fonts-ibm-plex`,
+  or from the [releases](https://github.com/IBM/plex/releases); without it VS
+  Code uses Menlo or its normal font), larger line height, soft wrap at 80 characters, no minimap, line
   numbers or code decorations, no word suggestions and no AI inline
   suggestions while typing.
 - Zen mode (`Cmd/Ctrl+K Z`) centres the text column; `View: Toggle Centered
@@ -323,8 +323,8 @@ distributed under the LaTeX Project Public License 1.3c.
 Thanks also to the authors of
 [marginalia](https://github.com/nleanba/typst-marginalia), which places the
 notes in the margin, of the Citation Style Language styles that the citation
-styles are based on ([citationstyles.org](https://citationstyles.org/)), of the TeX Gyre fonts (GUST e-foundry) and of the
-iA Writer fonts (iA Inc.).
+styles are based on ([citationstyles.org](https://citationstyles.org/)), of the
+TeX Gyre fonts (GUST e-foundry) and of IBM Plex (IBM).
 
 ## Related projects
 
@@ -354,7 +354,7 @@ See `LICENSE` for the details.
   each file names its original authors and links to the style it is based on.
   The modifications are under the same licence.
 - No fonts are included. The fonts that the template uses have their own
-  licences (TeX Gyre: GUST Font License; iA Writer Quattro: SIL Open Font
+  licences (TeX Gyre: GUST Font License; IBM Plex Mono: SIL Open Font
   License 1.1).
 - Dependency (downloaded by Typst, not included):
   [marginalia](https://typst.app/universe/package/marginalia), Unlicense.

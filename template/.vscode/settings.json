@@ -28,7 +28,7 @@
   },
   "[typst]": {
     "editor.inlineSuggest.enabled": false,
-    "editor.fontFamily": "'iA Writer Quattro S', 'iA Writer Quattro V', Menlo, monospace",
+    "editor.fontFamily": "'IBM Plex Mono', Menlo, monospace",
     "editor.fontSize": 15,
     "editor.lineHeight": 1.7,
     "editor.wordWrap": "bounded",
